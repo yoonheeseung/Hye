@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="net.board.db.*" %>
+<%@page import="com.naver.model.BoardBean"%>
+
 <%
-	BoardBean board=(BoardBean)request.getAttribute("boarddata");
+	BoardBean bcont=(BoardBean)request.getAttribute("bcont");
 %>
 
 <html>
@@ -16,10 +17,10 @@
 <body>
 <!-- 게시판 답변 -->
 <form action="./BoardReplyView.bo" method="post" name="boardform">
-<input type="hidden" name="BOARD_NUM" value="<%=board.getBOARD_NUM() %>">
-<input type="hidden" name="BOARD_RE_REF" value="<%=board.getBOARD_RE_REF() %>">
-<input type="hidden" name="BOARD_RE_LEV" value="<%=board.getBOARD_RE_LEV() %>">
-<input type="hidden" name="BOARD_RE_SEQ" value="<%=board.getBOARD_RE_SEQ() %>">
+<input type="hidden" name="BOARD_NUM" value="<%=bcont.getBOARD_NUM() %>">
+<input type="hidden" name="BOARD_RE_REF" value="<%=bcont.getBOARD_RE_REF() %>">
+<input type="hidden" name="BOARD_RE_LEV" value="<%=bcont.getBOARD_RE_LEV() %>">
+<input type="hidden" name="BOARD_RE_SEQ" value="<%=bcont.getBOARD_RE_SEQ() %>">
 
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
@@ -39,7 +40,7 @@
 		</td>
 		<td>
 			<input name="BOARD_SUBJECT" type="text" size="50" 
-				maxlength="100" value="Re: <%=board.getBOARD_SUBJECT() %>"/>
+				maxlength="100" value="Re: <%=bcont.getBOARD_SUBJECT() %>"/>
 		</td>
 	</tr>
 	<tr>

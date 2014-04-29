@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="com.naver.action.*" %>
 <%@ page import="com.naver.model.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -38,7 +37,7 @@
 			<table border=0 width=490 height=250 style="table-layout:fixed">
 				<tr>
 					<td valign=top style="font-family:돋음; font-size:12">
-					 ${bocnt.BOARD_CONT}
+					 ${board_cont}
 					</td>
 				</tr>
 			</table>
@@ -67,13 +66,13 @@
 	
 		<td colspan="5">
 			<font size=2>
-			<a href="./BoardDetailAction.bo?num=${bcont.BOARD_NUM}&page=${page}&state=reply'">
+			<a href="./BoardDetailAction.bo?num=${bcont.BOARD_NUM}&page=${page}&state=reply">
 			[답변]
 			</a>&nbsp;&nbsp;
-			<a href="./BoardDetailAction.bo?num=${bcont.BOARD_NUM}&page=${page}&state=edit'">
+			<a href="./BoardDetailAction.bo?num=${bcont.BOARD_NUM}&page=${page}&state=edit">
 			[수정]
 			</a>&nbsp;&nbsp;
-			<a href="./BoardDetailAction.bo?num=${bcont.BOARD_NUM}&page=${page}&state=del'">
+			<a href="./BoardDetailAction.bo?num=${bcont.BOARD_NUM}&page=${page}&state=del">
 			[삭제]
 			</a>&nbsp;&nbsp;
 			<a href="./BoardList.bo">[목록]</a>&nbsp;&nbsp;

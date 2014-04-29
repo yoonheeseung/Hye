@@ -7,8 +7,11 @@
 <title>MVC 게시판</title>
 </head>
 <body>
-<form name="deleteForm" action="./BoardDeleteAction.bo?num=<%=num %>" 
+<form name="deleteForm" action="./BoardDelete.bo?num=<%=num %>" 
 	method="post">
+<input type="hidden" name="board_no" 
+    value="${bcont.BOARD_NUM}" />
+  <input type="hidden" name="page" value="${page}" />
 <table border=1>
 <tr>
 	<td>

@@ -49,11 +49,12 @@ public class BoardDetailAction implements Action{
 	   	
 	   	ActionForward forward = new ActionForward();
 	   	forward.setRedirect(false);
-	   	
+	   	System.out.println("status: "+status);
 	   	if (status.equals("cont")) {
 			request.setAttribute("board_cont", board_cont);
 			forward.setPath("./board/board_view.jsp");
 		} else if (status.equals("reply")) {
+			System.out.println("reply");
 			request.setAttribute("board_cont", board_cont);
 			forward.setPath("./board/board_reply.jsp");
 		} else if (status.equals("edit")) {

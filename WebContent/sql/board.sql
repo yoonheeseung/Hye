@@ -41,7 +41,7 @@ CREATE TABLE HYMEMBERBOARD(
 
 
 select * from (select rownum rnum,Board_num,board_name,board_subject,board_content,board_file,board_re_ref,board_re_lev,board_re_seq,board_readcount,board_date
-		 from (select * from board order by board_re_ref desc, board_re_seq asc))
+		 from (select * from HYBOARD order by board_re_ref desc, board_re_seq asc))
 		where rnum>=1 and rnum<=5;
 
 
@@ -52,7 +52,7 @@ select * from (select rownum rnum,BOARD_NUM,BOARD_NAME,BOARD_SUBJECT,BOARD_CONTE
          where rnum>=1 and rnum<=5;
 
 
-
+select * from hyboard;
 
 
 

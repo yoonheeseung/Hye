@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="net.board.db.*" %>
+<%@page import="com.naver.model.BoardBean"%>
 <%
-	BoardBean board = (BoardBean)request.getAttribute("boarddata");
+	BoardBean board = (BoardBean)request.getAttribute("bcont");
 %>
 
 <html>
@@ -16,7 +16,7 @@
 
 <body>
 <!-- 게시판 수정 -->
-<form action="BoardModifyAction.bo" method="post" name="modifyform">
+<form action="BoardModify.bo" method="post" name="modifyform">
 <input type="hidden" name="BOARD_NUM" value=<%=board.getBOARD_NUM() %>>
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
