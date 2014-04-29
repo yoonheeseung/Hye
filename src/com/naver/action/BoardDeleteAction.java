@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.mtory.action.Action;
 import com.mtory.action.ActionForward;
 
-public class BoardWriteAction implements Action {
+public class BoardDeleteAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request,

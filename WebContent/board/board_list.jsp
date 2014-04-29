@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.naver.action.*" %>
 <%@ page import="com.naver.model.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
 	List boardList=(List)request.getAttribute("boardlist");
@@ -15,34 +16,34 @@
 
 <html>
 <head>
-	<title>MVC °Ô½ÃÆÇ</title>
+	<title>MVC ê²Œì‹œíŒ</title>
 </head>
 
 <body>
-<!-- °Ô½ÃÆÇ ¸®½ºÆ® -->
+<!-- ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸ -->
 <table width=50% border="0" cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
-		<td colspan="4">MVC °Ô½ÃÆÇ</td>
+		<td colspan="4">MVC ê²Œì‹œíŒ</td>
 		<td align=right>
-			<font size=2>±Û °³¼ö : ${listcount }</font>
+			<font size=2>ê¸€ ê°œìˆ˜ : ${listcount }</font>
 		</td>
 	</tr>
 	
 	<tr align="center" valign="middle" bordercolor="#333333">
 		<td style="font-family:Tahoma;font-size:8pt;" width="8%" height="26">
-			<div align="center">¹øÈ£</div>
+			<div align="center">ë²ˆí˜¸</div>
 		</td>
 		<td style="font-family:Tahoma;font-size:8pt;" width="50%">
-			<div align="center">Á¦¸ñ</div>
+			<div align="center">ì œëª©</div>
 		</td>
 		<td style="font-family:Tahoma;font-size:8pt;" width="14%">
-			<div align="center">ÀÛ¼ºÀÚ</div>
+			<div align="center">ìž‘ì„±ìž</div>
 		</td>
 		<td style="font-family:Tahoma;font-size:8pt;" width="17%">
-			<div align="center">³¯Â¥</div>
+			<div align="center">ë‚ ì§œ</div>
 		</td>
 		<td style="font-family:Tahoma;font-size:8pt;" width="11%">
-			<div align="center">Á¶È¸¼ö</div>
+			<div align="center">ì¡°íšŒìˆ˜</div>
 		</td>
 	</tr>
 	
@@ -64,12 +65,12 @@
 				<%for(int a=0;a<=bl.getBOARD_RE_LEV()*2;a++){ %>
 				&nbsp;
 				<%} %>
-				¢º
+				â–¶
 			<%}else{ %>
-				¢º
+				â–¶
 			<%} %>
-			<a href="./BoardDetailAction.bo?num=<%=bl.getBOARD_NUM()%>">
-				<%=bl.getBOARD_SUBJECT()%>
+			<a href="./BoardDetailAction.bo?num=<%=bl.getBOARD_NUM()%>&page=${page}&state=cont">
+				<%=bl.getBOARD_SUBJECT()%>       
 			</a>
 			</div>
 		</td>
@@ -88,9 +89,9 @@
 	<tr align=center height=20>
 		<td colspan=7 style=font-family:Tahoma;font-size:10pt;>
 			<%if(nowpage<=1){ %>
-			[ÀÌÀü]&nbsp;
+			[ì´ì „]&nbsp;
 			<%}else{ %>
-			<a href="./BoardList.bo?page=<%=nowpage-1 %>">[ÀÌÀü]</a>&nbsp;
+			<a href="./BoardList.bo?page=<%=nowpage-1 %>">[ì´ì „]</a>&nbsp;
 			<%} %>
 			
 			<%for(int a=startpage;a<=endpage;a++){
@@ -102,15 +103,15 @@
 			<%} %>
 			
 			<%if(nowpage>=maxpage){ %>
-			[´ÙÀ½]
+			[ë‹¤ìŒ]
 			<%}else{ %>
-			<a href="./BoardList.bo?page=<%=nowpage+1 %>">[´ÙÀ½]</a>
+			<a href="./BoardList.bo?page=<%=nowpage+1 %>">[ë‹¤ìŒ]</a>
 			<%} %>
 		</td>
 	</tr>
 	<tr align="right">
 		<td colspan="5">
-	   		<a href="./BoardWrite.bo">[±Û¾²±â]</a>
+	   		<a href="./BoardWrite.bo">[ê¸€ì“°ê¸°]</a>
 		</td>
 	</tr>
 </table>

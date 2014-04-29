@@ -136,5 +136,63 @@ public class BoardDAO {
 		}  
 		return false;
 	}
+	
+	//조회수 증가
+	public void setReadCountUpdate(int num) {
+		String sql="update board set BOARD_READCOUNT = BOARD_READCOUNT+1 "
+				 + "where BOARD_NUM =? ";
+			try{
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1, num);
+				pstmt.executeUpdate();
+			}catch(SQLException ex){
+				System.out.println("setReadCountUpdate 에러 : "+ex);
+			}
+			finally{
+				try{
+				if(pstmt!=null)pstmt.close();
+				if(con!=null) con.close();
+				}
+				catch(Exception ex){
+					ex.printStackTrace();
+				}
+		}
+		
+	}
+	
+//글내용 
+	public BoardBean getDetail(int num) {
+		BoardBean board = null;
+		try{
+			con = ds.getConnection();
+			pstmt = con.prepareStatement(
+					"select * from board where BOARD_NUM = ?");
+			pstmt.setInt(1, num);
+			
+			rs= pstmt.executeQuery();
+			
+			if(rs.next()){
+				board = new BoardBean();
+				board.setBOARD_NUM(rs.getInt("BOARD_NUM"));
+				board.setBOARD_NAME(rs.getString("BOARD_NAME"));
+				board.setBOARD_SUBJECT(rs.getString("BOARD_SUBJECT"));
+				board.setBOARD_CONTENT(rs.getString("BOARD_CONTENT"));
+				board.setBOARD_FILE(rs.getString("BOARD_FILE"));
+				board.setBOARD_RE_REF(rs.getInt("BOARD_RE_REF"));
+				board.setBOARD_RE_LEV(rs.getInt("BOARD_RE_LEV"));
+				board.setBOARD_RE_SEQ(rs.getInt("BOARD_RE_SEQ"));
+				board.setBOARD_READCOUNT(rs.getInt("BOARD_READCOUNT"));
+				board.setBOARD_DATE(rs.getString("BOARD_DATE"));
+			}
+			return board;
+		}catch(Exception ex){
+			System.out.println("getDetail 에러 : " + ex);
+		}finally{
+			if(rs!=null)try{rs.close();}catch(SQLException ex){}
+			if(pstmt !=null)try{pstmt.close();}catch(SQLException ex){}
+			if(con!=null) try{con.close();}catch(SQLException ex){}
+		}
+		return null;
+	}
 
 }

@@ -77,7 +77,7 @@ public String getBOARD_DATE() {
 	return BOARD_DATE;
 }
 public void setBOARD_DATE(String bOARD_DATE) {
-	BOARD_DATE = bOARD_DATE;
+	BOARD_DATE = bOARD_DATE.substring(0,10);
 }
  
  
