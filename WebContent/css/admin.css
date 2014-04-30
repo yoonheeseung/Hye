@@ -1,0 +1,182 @@
+@CHARSET "UTF-8";
+
+/* admin_login.jsp ui */
+
+#aLogin_wrap{
+ width:360px; height:160px;
+ border:1px solid blue; border-radius:20px;
+ box-shadow:19px 19px 19px #ccc;
+ margin-left:auto; margin-right:auto; 
+ /* div 수평 중앙 정렬 */
+ margin-top:100px; /* 바깥 상단 여백을 100픽셀로 */	
+}
+#aLogin_wrap .aLogin_title{
+	margin:20px 0 0 104px; width:140px;
+	font-size:20px; background:skyblue;
+	border-radius:15px; text-align:center;
+	padding:3px;
+}
+#aLogin_t{
+	margin:21px 0 0 18px;
+}
+.input_s{
+	width:70px; height:50px; font-weight:bold;/*글자를 진하게*/
+	border-radius:13px; border:1px dotted blue;/*dotted 점선*/
+}
+.input_s:hover{/* :hover는 마우스 오버시 css 효과 */
+	cursor:hand; cursor:pointer;
+}
+
+/* admin_index.jsp 관리자 메인 ui */
+#aIndex_wrap{
+	width:960px; height:760px;
+	border:1px solid blue; border-radius:15px;
+	box-shadow:15px 15px 15px #ccc;
+	margin-left:auto; margin-right:auto;/*div 수평 중앙 정렬*/
+	margin-top:30px;
+}
+#aIndex_header{
+	width:940px; height:200px;
+	border:1px solid red; border-radius:15px;
+	margin:10px 0 0 10px;
+}
+#aIndex_logo{
+	height:180px; width:180px;
+	border:1px solid blue; border-radius:15px;
+	margin:10px 0 0 10px;
+	float:left;
+	/* div 안의 복수 div를 수직정렬에서 수평 정렬로
+	처리한다.월말평가 문제 가능성(웹표준) */
+}
+#aIndex_logo img{
+	width:160px;
+	margin:35px 0 0 5px;
+	height:100px;
+}
+#aIndex_menu{
+	height:180px; width:450px;
+	border:1px solid blue; border-radius:15px;
+	margin:10px 0 0 10px; float:left;	
+}
+#aIndex_menu ul li{
+	list-style:none;/* ul li 목록 앞 점 없애기
+	:웹표준 월말평가 문제 예상 */
+	float:left; /*목록 수직정렬을 수평정렬로 바꿈,
+	월말평가 예상문제 */
+	margin:130px 0 0 0; padding:0 18px;/*좌우 안여백을 18픽셀*/
+}
+a:link{/*하이퍼링크 된 부분 밑줄 사라지게 하기*/
+	text-decoration:none;
+}
+a:active{/*하이퍼링크 된곳 클릭하는 순간 */
+	text-decoration:none;
+}
+a:visited{/*한번이라도 클릭한 곳*/
+	text-decoration:none;
+}
+a:hover{/*하이퍼링크 된곳 마우스 오버시*/
+	text-decoration:underline; /*밑줄 나오게 하기*/
+}
+#aIndex_right{
+	height:180px; width:264px;
+	border:1px solid blue; border-radius:15px;
+	margin:10px 0 0 10px;	
+	float:left;
+}
+#aIndex_login{
+	font-size:12px; font-family:"굴림체";	
+	display:block;/*span 태그 블록영역 지정*/
+	margin:10px 0 0 5px;
+}
+.clear{
+	clear:both; /* div간 잘못된 css 적용을 막아줌 */
+}
+#aIndex_cont{
+	width:940px; height:430px;
+	border:1px solid red;
+	border-radius:15px; margin:10px 0 0 10px;
+}
+#aIndex_cont .aCont_title{
+	font-size:14px; font-family:"굴림체";
+	margin:200px 0 0 350px;
+}
+#aIndex_footer{
+	width:940px; height:86px;
+	border:1px solid red;
+	border-radius:15px; margin:10px 0 0 10px;
+}
+#aIndex_footer .aFooter_title{
+	margin:33px 0 0 200px;
+	font-size:16px;
+}
+
+/* admin_gongji_write.jsp ui */
+#aGongji_wrap{
+	width:380px; height:370px; border:1px solid pink;
+	border-radius:15px;
+	margin-left:auto;margin-right:auto;
+	margin-top:30px;
+}
+#aGongji_wrap .aGongji_title{
+	margin:27px 0 0 106px; width:160px;
+	font-size:19px; background:pink; border-radius:15px;
+	padding:3px; text-align:center;
+}
+#aGongji_t{
+	margin:20px 0 0 17px;
+}
+#aGongji_t th{
+	background:#ccc; border-radius:15px;
+}
+#aGongji_menu{
+	margin:25px 0 0 75px;
+}
+
+/*admin_gongji_list.jsp ui */
+#aGongji_list{
+	width:815px; padding:5px;
+	border:1px solid blue; border-radius:20px;
+	box-shadow:20px 20px 20px #ccc;
+	margin-left:auto; margin-right:auto;
+	margin-top:10px;
+}
+#aGongji_list .aGongji_title{
+	margin:15px 0 0 300px; width:170px;
+	font-size:20px; background:pink; border-radius:15px;
+	text-align:center; padding:3px;
+}
+#aGongji_t{
+	margin:10px 0 0 15px;
+}
+#bList_paging{
+	margin:13px 0 0 270px;
+}
+#bListW_menu{
+	margin:13px 0 10px 720px;
+}
+.input_b{
+	border-radius:15px; font-weight:bold; 
+	border:1px solid red;
+}
+.input_b:hover{
+	cursor:pointer; cursor:hand;
+}
+#aGongji_list .aGongji_count{
+	margin:7px 0 0 640px; background:skyblue;
+	padding:3px; text-align:center;
+	border-radius:15px; width:140px; font-size:16px;
+}
+
+/* admin_gongji_cont.jsp */
+#aGongji_cont{
+	width: 370px;
+	padding: 10px;
+	border: 1px solid blue;
+	border-radius:10px;
+	box-shadow:10px 10px 10px #ccc;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 60px;
+}
+
+

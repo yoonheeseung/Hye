@@ -39,6 +39,8 @@ CREATE TABLE HYMEMBERBOARD(
 	BOARD_DATE	DATE
 );
 
+select * from hymember;
+select * from HYMEMBERBOARD
 
 select * from (select rownum rnum,Board_num,board_name,board_subject,board_content,board_file,board_re_ref,board_re_lev,board_re_seq,board_readcount,board_date
 		 from (select * from HYBOARD order by board_re_ref desc, board_re_seq asc))
@@ -52,7 +54,12 @@ select * from (select rownum rnum,BOARD_NUM,BOARD_NAME,BOARD_SUBJECT,BOARD_CONTE
          where rnum>=1 and rnum<=5;
 
 
-select * from hyboard;
+select count(*) from hyboard;
 
 
+select * from gongji7 order by gongji_no desc
 
+select * from 
+(select rownum rnum,gongji_no,gongji_name,gongji_title,gongji_hit,gongji_date
+from(select * from gongji7 order by gongji_no desc)) 
+where rnum>? and rnum<=?"
